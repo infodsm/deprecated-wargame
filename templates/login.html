@@ -22,13 +22,13 @@
     </div>
     <div class="main">
       <center>
-        <form class="tool" method="post">
+        <form class="tool" action="/login" method="POST">
           <fieldset class="square" style="width:500px;height:300px;">
             <center>
-              <span class="login" style="">Log In</span>
-              <li><input type="text" name="" value="" style="margin-top:50px;padding-left:10px;"></li>
-              <li><input type="password" name="" value="" style="margin-bottom:20px;padding-left:10px;"></li>
-              <li><button type="button" name="button">Login</button></li>
+            <li style="font-size:50px;">Log In</li>
+            <li><input type="text" name="username" value="" placeholder="Username" style="margin-top:50px;padding-left:10px;"></li>
+            <li><input type="password" name="password" value="" placeholder="Password" style="margin-bottom:20px;padding-left:10px;"></li>
+            <input type="submit" name="button">
             </center>
           </fieldset>
         </form>
