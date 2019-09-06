@@ -1,1 +1,2 @@
-# wargame
+# INF0 Wargame
+What is it???

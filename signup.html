@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <style>
+    body{
+      background-color: #101010;
+      padding:0;
+      margin:0;
+    }
+    .top{
+      position:fixed;
+      width:100%;
+      height:55px;
+      background-color:black;
+    }
+    li{
+      list-style: none;
+      color:gray;
+    }
+    .top li{
+      padding-left:20px;
+      float:left;
+    }
+    .top1{
+      position:relative;
+      left:100px;
+    }
+    .top2{
+      position:relative;
+      left:700px;
+    }
+    .logo{
+      position:relative;
+      top:-4px;
+      font-size:25px;
+      font-weight:bold;
+      color:white;
+    }
+    .main{
+      position:relative;
+      top:200px;
+      color:gray;
+    }
+    input{
+      height:30px;
+      width:400px;
+      margin-top:20px;
+      font-size:25px;
+      background-color:#101010;
+      color:gray;
+      padding-left:10px;
+    }
+    input:focus{
+      outline:none;
+    }
+    button{
+      margin-top:20px;
+      width:200px;
+      height:30px;
+      font-size:25px;
+      background-color: #101010;
+      color:gray;
+      border:none;
+    }
+    button:focus{
+      outline:none;
+    }
+  </style>
+  <body>
+    <div class="top">
+      <div class="top1">
+        <ul>
+          <a href="home.html"><li class="logo" style="font-family:consolas;">INF0 Wargame</li></a>
+          <li>도전과제</li>
+          <li>스코어코어</li>
+        </ul>
+      </div>
+      <div class="top2">
+        <ul>
+          <a href="signup.html"><li>회원가입</li></a>
+          <li>|</li>
+          <a href="login.html"><li>로그인</li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <center>
+        <form class="tool" method="post">
+          <fieldset class="square" style="width:500px;height:360px;">
+            <center>
+              <li style="font-size:50px;">Sign Up</li>
+              <li><input type="text" name="" placeholder="ID/User name" required></li>
+              <li><input type="password" id="pass"  placeholder="Password" required></li>
+              <li><input type="password" id="repass" placeholder="Re-type the Password" required></li>
+              <li><input type="text" name=""  placeholder="email" required></li>
+              <li><button type="button" name="button">Sign Up</button></li>
+            </center>
+          </fieldset>
+        </form>
+      </center>
+    </div>
+  </body>
+</html>
