@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <link rel="stylesheet" href="/static/style.css">
+  <body>
+    <div class="top">
+      <div class="top1">
+        <ul>
+          <a href="{{ url_for('index') }}"><li class="logo" style="font-family:consolas;">INF0 Wargame</li></a>
+          <a href="{{ url_for('notice') }}"><li>Notice</li></a>
+          <a href="{{ url_for('problems') }}"><li>Problems</li></a>
+          <a href="{{ url_for('scoreboard') }}"><li>Scoreboard</li></a>
+          <li>|</li>
+          <a href="{{ url_for('signup') }}"><li>Signup</li></a>
+          <li>|</li>
+          <a href="{{ url_for('login') }}"><li>Login</li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <center>
+        <form class="tool" method="post">
+          <fieldset class="square" style="width:500px;height:360px;">
+            <center>
+              <li style="font-size:50px;">Sign Up</li>
+              <li><input type="text" name="" placeholder="ID/User name" required></li>
+              <li><input type="password" id="pass"  placeholder="Password" required></li>
+              <li><input type="password" id="repass" placeholder="Re-type the Password" required></li>
+              <li><input type="text" name=""  placeholder="email" required></li>
+              <li><button type="button" name="button">Sign Up</button></li>
+            </center>
+          </fieldset>
+        </form>
+      </center>
+    </div>
+  </body>
+</html>
