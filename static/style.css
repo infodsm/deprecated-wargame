@@ -59,6 +59,7 @@ input{
   border-radius: 3px;
   margin-top:20px;
   font-size:25px;
+  color: white;
   background-color:#101010;
   ime-mode:disabled;
 }

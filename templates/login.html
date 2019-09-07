@@ -5,14 +5,12 @@
     <div class="main">
       <center>
         <form class="tool" action="/login" method="POST">
-          <fieldset class="square" style="width:500px;height:300px;">
+          <fieldset class="square" style="width:400px;height:300px;">
             <center>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             {% for message in messages %}
-            <div role="alert">
                 <li style="font-size: 20px;">{{message}}</li>
-            </div>
             {% endfor %}
             {% endif %}
             {% endwith %}

@@ -4,19 +4,29 @@
     {% include 'init.html' %}
     <div class="main">
       <center>
-        <form class="tool" method="POST">
-          <fieldset class="square" style="width:500px;height:360px;">
+        <form class="tool" action="/signup" method="POST">
+          <fieldset class="square" style="width:400px;height:400px;">
             <center>
-              <li style="font-size:50px;">Sign Up</li>
-              <input type="text" name="" placeholder="Username" required>
-              <input type="password" id="pass"  placeholder="Password" required>
-              <input type="password" id="repass" placeholder="Re-type the Password" required>
-              <input type="text" name=""  placeholder="Email" required>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <li style="font-size: 20px;">{{message}}</li>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {% block body %}{% endblock %}
+            <li style="font-size:50px;">Sign Up</li>
+            <input type="text" name="username" value="" placeholder="Username" style="margin-top:50px;padding-left:10px"; required>
+            <input type="password" name="password" value="" placeholder="Password" style="padding-left:10px;" required>
+            <input type="password" name="secret" value="" placeholder="Re-type the Password" style="padding-left:10px;" required>
+            <input type="text" name="email" value="" placeholder="E-mail" style="margin-bottom:20px;padding-left:10px;" required>
             <input type="submit" name="button">
             </center>
           </fieldset>
         </form>
       </center>
     </div>
+  	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
   </body>
 </html>

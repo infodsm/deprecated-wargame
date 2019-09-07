@@ -39,9 +39,30 @@ def scoreboard():
     # return render_template("scoreboard.html")
     return redirect(url_for('login'))
 
-@app.route("/signup")
+
+@app.route("/signup", methods=['GET', 'POST'])
 def signup():
-    return render_template("signup.html")
+    if request.method == "GET":
+        return render_template("signup.html")
+    elif request.method == "POST":
+        POST_USERNAME = str(request.form['username'])
+        POST_PASSWORD = str(request.form['password'])
+        POST_SECRET = str(request.form['secret'])
+        POST_EMAIL = str(request.form['email'])
+
+        # Check if passwords match each other
+        if (POST_PASSWORD != POST_SECRET):
+            flash("Error: the passwords do not match.")
+            return redirect(url_for('signup'))
+
+        Session = sessionmaker(bind=engine)
+        s = Session()
+
+        s.add(User(POST_USERNAME, POST_PASSWORD, POST_EMAIL))
+        # Write change to database
+        s.commit()
+
+        return redirect(url_for('login'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -50,7 +71,7 @@ def login():
         if not session.get('logged_in'):
             return render_template("login.html")
         else:
-            flash("You are already logged in.");
+            return redirect(url_for('index'))
     elif request.method == "POST":
         POST_USERNAME = str(request.form['username'])
         POST_PASSWORD = str(request.form['password'])
