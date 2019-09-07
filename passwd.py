@@ -18,4 +18,7 @@ class User(base):
         self.password = password
         self.email = email
 
-base.metadata.create_all(engine)
+try:
+    base.metadata.create_all(engine)
+except:
+    pass
