@@ -18,6 +18,22 @@ class User(base):
         self.password = password
         self.email = email
 
+
+def is_vaild_email(mail):
+    try:
+        e = mail.split("@")
+        if len(e) is not 2:
+            raise ValueError
+        for i in e:
+            if len(i) > 100 or len(i) < 1:
+                raise ValueError
+            for j in i:
+                if not j.isdigit() and not j.isalpha() and j is not "-" and j is not ".":
+                    raise ValueError
+    except:
+        return False
+    return True
+
 try:
     base.metadata.create_all(engine)
 except:

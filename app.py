@@ -17,6 +17,7 @@ engine = create_engine(db_path, echo=True)
 
 # Create a Flask application
 app = Flask(__name__)
+app.secret_key = os.urandom(12)
 
 
 @app.route('/')
@@ -51,9 +52,15 @@ def signup():
         POST_SECRET = str(request.form['secret'])
         POST_EMAIL = str(request.form['email'])
 
-        # Check if passwords match each other
-        if (POST_PASSWORD != POST_SECRET):
-            flash("Error: the passwords do not match.")
+        # Check if given information is valid
+        try:
+            if POST_PASSWORD != POST_SECRET:
+                flash("Error: the passwords do not match.")
+                raise ValueError
+            if not is_vaild_email(POST_EMAIL):
+                flash("Error: the email address is invalid.")
+                raise ValueError
+        except:
             return redirect(url_for('signup'))
 
         Session = sessionmaker(bind=engine)
@@ -96,6 +103,3 @@ def login():
 def logout():
     session['logged_in'] = False
     return redirect(url_for('index'))
-
-
-app.secret_key = os.urandom(12)
