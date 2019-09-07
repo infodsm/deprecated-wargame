@@ -60,7 +60,6 @@ input{
   margin-top:20px;
   font-size:25px;
   background-color:#101010;
-  color: deeppink;
   ime-mode:disabled;
 }
 input:focus{
@@ -71,7 +70,7 @@ button{
   width:100px;
   height:30px;
   font-size:25px;
-  background-color: #101010;
+  background: linear-gradient(to right, #90d5eb, #f586b9);
   border:none;
 }
 button:focus{

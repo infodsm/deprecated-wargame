@@ -6,9 +6,15 @@ from flask import redirect
 from flask import request
 from flask import session
 from flask import abort
+from passwd import *
+import datetime
 import os
 
 
+# Create an engine for managing password
+engine = create_engine('sqlite:///passwd.db', echo=True)
+
+# Create a Flask application
 app = Flask(__name__)
 
 
@@ -46,18 +52,28 @@ def login():
         else:
             flash("You are already logged in.");
     elif request.method == "POST":
-        # print(request.form)
-        if request.form['password'] == 'password' and request.form['username'] == 'username':
+        POST_USERNAME = str(request.form['username'])
+        POST_PASSWORD = str(request.form['password'])
+
+        Session = sessionmaker(bind=engine)
+        s = Session()
+
+        # Validate whether the username and password is registered
+        query = s.query(User).filter(User.username.in_([POST_USERNAME]), User.password.in_([POST_PASSWORD]))
+        result = query.first()
+
+        if result:
             session['logged_in'] = True
             return redirect(url_for('index'))
         else:
-            flash("Login failed.")
+            flash("Error: username or password is invalid.")
             return redirect(url_for('login'))
+
 
 @app.route('/logout')
 def logout():
     session['logged_in'] = False
-    return index()
+    return redirect(url_for('index'))
 
 
 app.secret_key = os.urandom(12)
