@@ -7,12 +7,13 @@ from flask import request
 from flask import session
 from flask import abort
 from passwd import *
+from config import *
 import datetime
 import os
 
 
 # Create an engine for managing password
-engine = create_engine('sqlite:///passwd.db', echo=True)
+engine = create_engine(db_path, echo=True)
 
 # Create a Flask application
 app = Flask(__name__)
