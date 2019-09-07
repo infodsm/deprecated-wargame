@@ -16,7 +16,11 @@
           <li>|</li>
           <a href="{{ url_for('signup') }}"><li>Signup</li></a>
           <li>|</li>
-          <a href="{{ url_for('login') }}"><li>Login</li></a>
+          {% if session['logged_in'] == True %}
+            <a href="{{ url_for('logout') }}"><li>Logout</li></a>
+          {% else %}
+            <a href="{{ url_for('login') }}"><li>Login</li></a>
+          {% endif %}
         </ul>
       </div>
     </div>
