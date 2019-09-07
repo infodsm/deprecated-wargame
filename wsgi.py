@@ -1,11 +1,14 @@
-from flask import Flask, url_for
+from flask import Flask
+from flask import url_for
 from flask import render_template
 from flask import flash
 from flask import redirect
 from flask import request
 from flask import session
 from flask import abort
+from waitress import serve
 import os
+
 
 app = Flask(__name__)
 
@@ -59,4 +62,4 @@ def logout():
 
 
 app.secret_key = os.urandom(12)
-app.run(host="0.0.0.0", port="8080")
+serve(app, host="0.0.0.0", port="80")
