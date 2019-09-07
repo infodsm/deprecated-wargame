@@ -1,2 +1,1 @@
-web: waitress app:wsgi
-release: python wsgi.py
+web: gunicorn app:app
