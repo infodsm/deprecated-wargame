@@ -14,14 +14,11 @@
           <a href="{{ url_for('problems') }}"><li>Problems</li></a>
           <a href="{{ url_for('scoreboard') }}"><li>Scoreboard</li></a>
           <li>|</li>
-          {% if session['logged_in'] != True %}
-            <a href="{{ url_for('signup') }}"><li>Signup</li></a>
-            <li>|</li>
-          {% endif %}
           {% if session['logged_in'] == True %}
             <a href="{{ url_for('logout') }}"><li>Logout</li></a>
           {% else %}
             <a href="{{ url_for('login') }}"><li>Login</li></a>
+            <a href="{{ url_for('signup') }}"><li>Signup</li></a>
           {% endif %}
         </ul>
       </div>
