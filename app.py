@@ -8,6 +8,7 @@ from flask import session
 from flask import abort
 from passwd import *
 from config import *
+from passlib.hash import pbkdf2_sha256
 import datetime
 import os
 
@@ -66,6 +67,9 @@ def signup():
         Session = sessionmaker(bind=engine)
         s = Session()
 
+        # Hash the password
+        POST_PASSWORD = pbkdf2_sha256.encrypt(POST_PASSWORD, rounds=200000, salt_size=16)
+
         s.add(User(POST_USERNAME, POST_PASSWORD, POST_EMAIL))
         # Write change to database
         s.commit()
@@ -88,8 +92,11 @@ def login():
         s = Session()
 
         # Validate whether the username and password is registered
-        query = s.query(User).filter(User.username.in_([POST_USERNAME]), User.password.in_([POST_PASSWORD]))
-        result = query.first()
+        try:
+            account = s.query(User).filter_by(username=POST_USERNAME).first()
+            result = pbkdf2_sha256.verify(POST_PASSWORD, account.password)
+        except:
+            result = False
 
         if result:
             session['logged_in'] = True

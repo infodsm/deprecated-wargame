@@ -44,10 +44,9 @@ li{
   -webkit-text-fill-color: transparent;
 }
 .bottom{
-  position: absolute;
-  font-size:20px;
-  left:50%;
-  bottom:0;
+  border-bottom: 1px;
+  text-align: justify;
+  font-size: 20px;
 }
 .login{
   font-size:50px;
