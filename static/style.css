@@ -79,6 +79,7 @@ input:focus{
   font-size:25px;
   background-color: #101010;
   color:gray;
+  border:0px;
 }
 button:focus{
   outline:none;
@@ -105,4 +106,5 @@ button:focus{
   font-size:25px;
   background-color: #101010;
   color:gray;
+  border:0px;
 }
