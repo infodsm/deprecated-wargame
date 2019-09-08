@@ -11,7 +11,7 @@ class User(base):
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True)
     password = Column(String, unique=True)
-    email = Column(String)
+    email = Column(String, unique=True)
 
     def __init__(self, username, password, email):
         self.username = username

@@ -70,9 +70,14 @@ def signup():
         # Hash the password
         POST_PASSWORD = pbkdf2_sha256.encrypt(POST_PASSWORD, rounds=200000, salt_size=16)
 
-        s.add(User(POST_USERNAME, POST_PASSWORD, POST_EMAIL))
-        # Write change to database
-        s.commit()
+        try:
+            s.add(User(POST_USERNAME, POST_PASSWORD, POST_EMAIL))
+
+            # Write change to database
+            s.commit()
+        except:
+            flash("Error: duplicate user or email.")
+            return redirect(url_for('signup'))
 
         return redirect(url_for('login'))
 
