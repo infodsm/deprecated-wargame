@@ -31,11 +31,10 @@ def notice():
     return render_template("notice.html")
 
 
-@app.route("/problems")
-def problems():
-    # return render_template("problems.html")
+@app.route("/challenges")
+def challenges():
+    #return render_template("challenges.html")
     return redirect(url_for('login'))
-
 
 @app.route("/scoreboard")
 def scoreboard():
@@ -109,7 +108,6 @@ def login():
         else:
             flash("Error: username or password is invalid.")
             return redirect(url_for('login'))
-
 
 @app.route('/logout')
 def logout():

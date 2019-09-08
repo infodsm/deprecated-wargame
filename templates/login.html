@@ -2,23 +2,23 @@
 <html lang="en">
   <body>
     {% include 'init.html' %}
-    <div class="main">
+    <div class="login_main">
       <center>
-        <form class="tool" action="/login" method="POST">
-          <fieldset class="square" style="width:400px;height:300px;">
+        <form class="login_tool" action="/login" method="POST">
+          <fieldset class="login_square" style="width:400px;height:300px;">
             <center>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              {% for message in messages %}
                 <li style="font-size: 20px;">{{message}}</li>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
-            {% block body %}{% endblock %}
-            <li style="font-size:50px;">Log In</li>
-            <input type="text" name="username" value="" placeholder="Username" style="margin-top:50px;padding-left:10px"; required>
-            <input type="password" name="password" value="" placeholder="Password" style="margin-bottom:20px;padding-left:10px;" required>
-            <input type="submit" name="button">
+              {% endfor %}
+              {% endif %}
+              {% endwith %}
+              {% block body %}{% endblock %}
+              <li style="font-size:50px;">Log In</li>
+              <input type="text" name="username" value="" placeholder="Username" style="margin-top:50px;padding-left:10px"; required>
+              <input type="password" name="password" value="" placeholder="Password" style="margin-bottom:20px;padding-left:10px;" required>
+              <button class="login_button" type="submit" name="button">Log In</button>
             </center>
           </fieldset>
         </form>

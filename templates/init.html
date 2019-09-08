@@ -3,24 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>INF0 Wargame</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style media="screen">
+      body{
+        font-family: 'Source Code Pro';
+      }
+    </style>
   </head>
-  <link rel="stylesheet" href="/static/style.css">
   <body>
-    <div class="top">
-      <div class="top1">
+    <div class="init_top" style="top:0px;">
+      <div class="init_top1">
         <ul>
-          <a href="{{ url_for('index') }}"><li class="logo" style="font-family:consolas;">INF0 Wargame</li></a>
+          <a href="{{ url_for('index') }}"><li class="logo" style="color:white;top:-8px;">INF0 Wargame</li></a>
           <a href="{{ url_for('notice') }}"><li>Notice</li></a>
-          <a href="{{ url_for('problems') }}"><li>Problems</li></a>
+          <a href="{{ url_for('challenges') }}"><li>Challenges</li></a>
           <a href="{{ url_for('scoreboard') }}"><li>Scoreboard</li></a>
-          <li>|</li>
-          {% if session['logged_in'] == True %}
-            <a href="{{ url_for('logout') }}"><li>Logout</li></a>
-          {% else %}
-            <a href="{{ url_for('login') }}"><li>Login</li></a>
-            <a href="{{ url_for('signup') }}"><li>Signup</li></a>
-          {% endif %}
         </ul>
+      </div>
+      <div class="init_top2">
+        {% if session['logged_in'] == True %}
+          <a href="{{ url_for('logout') }}"><li>Logout</li></a>
+        {% else %}
+          <a href="{{ url_for('login') }}"><li>Login</li></a>
+          <li>|</li>
+          <a href="{{ url_for('signup') }}"><li>Signup</li></a>
+        {% endif %}
       </div>
     </div>
   </body>

@@ -1,9 +1,12 @@
 body{
-  background-color: #101010;
-  padding:0;
-  margin:0;
+    background-color: #101010;
+    padding:0;
+    margin:0;
 }
-.top{
+.init_top a{
+  text-decoration: none;
+}
+.init_top{
   position:fixed;
   width:100%;
   height:55px;
@@ -11,68 +14,95 @@ body{
 }
 li{
   list-style: none;
-  color:gray;
 }
-.top li{
+.init_top li{
   padding-left:20px;
   float:left;
+  color:gray;
 }
-.top1{
+.init_top1{
   position:relative;
   left:100px;
 }
-.top2{
+.init_top2{
   position:relative;
-  left:900px;
+  left:700px;
 }
 .logo{
   position:relative;
-  top:-4px;
+  top:-8px;
   font-size:25px;
   font-weight:bold;
-  color:white;
 }
-.main{
+.index_main{
   position:relative;
-  top:150px;
+  top:300px;
   height:100px;
   font-size: 50px;
 }
-.main li{
+.index_main li{
   background: linear-gradient(to right, #90d5eb, #f586b9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.bottom{
-  border-bottom: 1px;
-  text-align: justify;
-  font-size: 20px;
+.index_bottom{
+  position: absolute;
+  font-size:20px;
+  left:50%;
+  bottom:0;
 }
-.login{
-  font-size:50px;
+.index_bottom li{
+  color:gray;
 }
-input{
+
+.login_main{
+  position:relative;
+  top:230px;
+  color:gray;
+}
+.login_square input{
   height:30px;
   width:400px;
-  boder: 2px solid transparent;
-  border-radius: 3px;
   margin-top:20px;
   font-size:25px;
-  color: white;
   background-color:#101010;
+  color:gray;
   ime-mode:disabled;
 }
 input:focus{
   outline:none;
 }
-button{
+.login_button{
   margin-top:20px;
   width:100px;
   height:30px;
   font-size:25px;
-  background: linear-gradient(to right, #90d5eb, #f586b9);
-  border:none;
+  background-color: #101010;
+  color:gray;
 }
 button:focus{
   outline:none;
+}
+
+.signup_main{
+  position:relative;
+  top:200px;
+  color:gray;
+}
+.signup_square input{
+  height:30px;
+  width:400px;
+  margin-top:20px;
+  font-size:25px;
+  background-color:#101010;
+  color:gray;
+  padding-left:10px;
+}
+.signup_button{
+  margin-top:20px;
+  width:200px;
+  height:30px;
+  font-size:25px;
+  background-color: #101010;
+  color:gray;
 }
