@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <body>
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     {% include 'init.html' %}
     <div class="signup_main">
       <center>
@@ -20,7 +20,7 @@
               <input type="password" name="password" value="" placeholder="Password" style="padding-left:10px;" required>
               <input type="password" name="secret" value="" placeholder="Re-type the Password" style="padding-left:10px;" required>
               <input type="text" name="email" value="" placeholder="E-mail" style="margin-bottom:20px;padding-left:10px;" required>
-              <button class="signup_button" type="submit" name="button">Sign Up</button>
+              <!--<button class="signup_button" type="submit" name="button">Sign Up</button> -->
             </center>
           </fieldset>
         </form>

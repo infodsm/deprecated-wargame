@@ -11,7 +11,7 @@
       }
     </style>
   </head>
-  <body>
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div class="init_top" style="top:0px;">
       <div class="init_top1">
         <ul>
@@ -26,8 +26,8 @@
           <a href="{{ url_for('logout') }}"><li>Logout</li></a>
         {% else %}
           <a href="{{ url_for('login') }}"><li>Login</li></a>
-          <li>|</li>
-          <a href="{{ url_for('signup') }}"><li>Signup</li></a>
+          <!-- <li>|</li>
+          <a href="{{ url_for('signup') }}"><li>Signup</li></a> -->
         {% endif %}
       </div>
     </div>
