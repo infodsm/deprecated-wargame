@@ -109,7 +109,6 @@ def login():
             flash("Error: username or password is invalid.")
             return redirect(url_for('login'))
 
-
 @app.route('/logout')
 def logout():
     session['logged_in'] = False
