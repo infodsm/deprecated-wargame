@@ -33,13 +33,11 @@ def notice():
 
 @app.route("/challenges")
 def challenges():
-    #return render_template("challenges.html")
-    return redirect(url_for('login'))
+    return render_template("challenges.html")
 
 @app.route("/scoreboard")
 def scoreboard():
-    # return render_template("scoreboard.html")
-    return redirect(url_for('login'))
+     return render_template("scoreboard.html")
 
 
 @app.route("/signup", methods=['GET', 'POST'])

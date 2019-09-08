@@ -34,6 +34,20 @@ li{
   font-size:25px;
   font-weight:bold;
 }
+@media(max-width:800px){
+  .init_top1{
+    left:0px;
+  }
+  .init_top2{
+    left:50px;
+  }
+  .init_top li{
+    padding-left:10px;
+  }
+  .logo{
+    padding-left:0px;
+  }
+}
 .index_main{
   position:relative;
   top:300px;
@@ -54,7 +68,6 @@ li{
 .index_bottom li{
   color:gray;
 }
-
 .login_main{
   position:relative;
   top:230px;
@@ -84,7 +97,6 @@ input:focus{
 button:focus{
   outline:none;
 }
-
 .signup_main{
   position:relative;
   top:200px;
@@ -107,4 +119,14 @@ button:focus{
   background-color: #101010;
   color:gray;
   border:0px;
+}
+
+.chal_main{
+  position:relative;
+  top:100px;
+  margin-left:200px;
+}
+.chal_main li{
+  color:gray;
+  font-size:30px;
 }
